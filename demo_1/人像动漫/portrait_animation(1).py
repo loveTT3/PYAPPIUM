@@ -14,13 +14,13 @@ def get_access_token():
     res = res.json()
     # print(res)
     access_token = res['access_token']
-    print access_token
+    print(access_token)
     return access_token
 
 
 # 下面的代码就是API文档中的代码，直接搬过来使用即可。
 request_url = "https://aip.baidubce.com/rest/2.0/image-process/v1/selfie_anime"
-f = open('zhao.png', 'rb')  # 二进制方式打开图片文件
+f = open(r'E:\PY_DEMO\demo_1\人像动漫\66.jpg', 'rb')  # 二进制方式打开图片文件
 img = base64.b64encode(f.read())  # 图像转为base64的格式，这是百度API文档中要求的
 
 params = {"image": img}
@@ -32,7 +32,7 @@ res = response.json()
 # 前面我们讲述了这个请求返回的是一个字典，其中一个键就是image，代表的是处理后的图像信息。
 # 将这个图像信息写入，得到最终的效果图。
 if res:
-    f = open("kouzhao1.jpg", 'wb')
+    f = open("qh.jpg", 'wb')
     after_img = res['image']
     after_img = base64.b64decode(after_img)
     f.write(after_img)

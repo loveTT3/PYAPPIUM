@@ -19,7 +19,7 @@ def get_access_token():
 
 request_url = "https://aip.baidubce.com/rest/2.0/image-process/v1/selfie_anime"
 # 二进制方式打开图片文件
-f = open('zhao.png', 'rb')
+f = open(r'E:\PY_DEMO\demo_1\人像动漫\111.jpg', 'rb')
 img = base64.b64encode(f.read())
 # 注意：这里就是多了type参数和mask_id参数，都是在源文档中可以查看的参数。
 # type的值为anime或者anime_mask。前者生成二次元动漫图，后者生成戴口罩的二次元动漫人像。
